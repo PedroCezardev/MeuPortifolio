@@ -14,6 +14,7 @@ html{
 body{
     font-size: 20px;
     background-color: #2b2f4b;
+    overflow-x: hidden;
 }
 
 img{
@@ -28,6 +29,7 @@ a{
 /* estilização do navbar */
 nav{
     max-width: 100%;
+    height: 10vh;
     margin: auto;
     padding: 2rem 1rem;
     display: flex;
@@ -39,9 +41,32 @@ nav{
     position: sticky; /* faz o navbar descer com a página */
 }
 
-.nav-logo{
-    max-width: 100px;
+/* estilização para lodo do navbar e do footer */
+nav .nav-logo,
+footer .logo{
+    display: flex;
+    align-items: center;
 }
+
+nav .nav-logo a,
+footer .logo a{
+    margin-left: 8px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+nav .nav-logo img,
+footer .logo img{
+    width: 40px;
+    height: 40px;
+}
+
+nav ul,
+footer .top ul{
+    display: flex;
+    gap: 40px;
+}
+/* fim */
 
 .nav-links{
     list-style: none;
@@ -73,23 +98,44 @@ nav{
 }
 
 /* customização do botão */
-.botton{
-    padding: 1rem 2rem;
+button a{
+    text-decoration: none;
+    color: #ebebf3;
+}
+
+nav .botton{
+    padding: 1rem;
     font-size: 1rem;
     color: #fff;
-    background-color: #1d4ed8;
+    background-color: #222238;
     border-radius: 5px;
     cursor: pointer;
+    border: 1px solid #ebebf3;
     transition: all 0.3s ease;
+    width: 140px;
+    height: 50px;
 }
 
-.botton:hover{
+nav .botton:hover{
     background-color: #1d4ed8;
 }
 
-.container{
+/* menu hamburguer */
+nav button#menuButton{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    padding: 7px;
+}
+/* fim customização botão */
+
+nav .container{
     margin: auto;
     padding: 5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .blur{
@@ -133,21 +179,6 @@ header .content p{
 /* estilização da imagem */
 header .image{
     position: relative;
-}
-
-/* estilização do circulo envolta da imagem */
-header .image::before{
-    content: "o";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 38rem;
-    font-weight: 400;
-    line-height: 20rem;
-    color: #1d4ed8;
-    opacity: 0.2;
-    z-index: -100;
 }
 
 /* estilização da imagem */
@@ -225,14 +256,15 @@ h5{
 .skills .skill-items{
     display: flex;
     margin-top: 70px;
-    gap: 30px;
+    display: grid; /* alinha em grade*/
+    grid-template-columns: repeat(3,1fr);
+    gap: 70px;
 }
 
 .skills .skill-items .item{
     background-color: #ebebf3;
     color: #1f243d;
     border-radius: 15px;
-    width: 25%;
     padding: 30px;
     border-bottom: 4px solid transparent;
     cursor: pointer;
@@ -311,28 +343,28 @@ h5{
     display: flex;
     align-items: center;
     cursor: pointer;
-    gap: 8px;
     border: none;
     border-radius: 10px;
     
 }
 
-.portfolio .header button link{
-    text-decoration: none;
-}
-
-.portfolio .header button i {
+.portfolio .header button a {
     font-size: 26px;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
 }
 
 .portfolio .portfo-items{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-items: center;
+    display: grid; /* alinha em grade*/
+    grid-template-columns: repeat(3,1fr);
+    gap: 70px;
 }
 
 .portfolio .portfo-items .item{
-    width: 30%;
     background-color: #ebebf3;
     border-radius: 15px;
     border-bottom: 4px solid transparent;
@@ -351,4 +383,353 @@ h5{
     object-fit: cover; /* centraliza a imagem no meio */
     object-position: top;
     border-radius: 10px 10px 20px;
+}
+
+.portfolio .portfo-items .item .info{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 20px 32px 42px;
+}
+
+.portfolio .portfo-items .item .info p{
+    font-size: 15px;
+}
+
+.portfolio .portfo-items .item .info a{
+    text-decoration: underline; /* sublinhar */
+    text-underline-offset: 10px; /* espaçamento da linha com o texto */
+    text-decoration-color: #1c1353;
+}
+
+.portfolio .portfo-items .item .info a i{
+    margin-left: 2px;
+    font-size: 16px;
+}
+
+/* inicio da estilização de cursos */
+section .header{
+    margin-top: 5vh;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 600;
+}
+
+.features{
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 110px 85px;
+}
+
+.features .card{
+    background-color: #27272a;
+    padding: 1rem;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.features .card:hover{
+    background-color: #323232;
+    border-color: #fff;
+}
+
+.features .card span{
+    display: inline-block;
+    background-color: #1e40af;
+    padding: 2px 9px;
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.features .card h4{
+    margin-bottom: 0.5rem;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.features .card p{
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.features .card a{
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.features .card a:hover{
+    color: #1e40af;
+}
+/* fim da estilização cursos */
+
+/* inicio do footer */
+footer{
+    background-color: #222238;
+    padding: 85px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 12vh;
+}
+
+footer .logo a{
+    color: #ebebf3;
+}
+
+footer .top,
+footer .bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer .top .social-links{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+}
+
+footer .social-links a{
+    color: #ebebf3;
+}
+
+footer .separator{
+    width: 100%;
+    height: 1px;
+    background-color: #ebebf3;
+    margin: 30px 0 20px;
+}
+
+footer .bottom p{
+    font-size: 14px;
+    color: #ebebf3;
+    margin-top: 20px;
+}
+
+footer .bottom .links  a{
+    font-size: 12px;
+    margin-left: 14px;
+    color: #ebebf3;
+    margin-top: 30px;
+}
+/* fim do footer */
+
+/* responsividade */
+@media screen and (max-width: 1200px) {
+    .content h1{
+        font-size: 15px;
+    }
+
+    .image img{
+        width: 380px;
+    }
+
+    .skills .skill-items{
+        gap: 25px;
+    }
+
+    .skills .skill-items .item{
+        width: 90%;
+    }
+
+    .about .left img{
+        width: 370px;
+    }
+
+    .skills h3,
+    .about .right h3,
+    .portfolio .header h3{
+        font-size: 32px;
+    }
+
+    .about .right p{
+        font-size: 15px;
+    }
+
+    .portfolio .portfo-items{
+        gap: 25px;
+    }
+
+    .portfolio .portfo-items .item{
+        width: 90%;
+    }
+
+    .kontainer .features .card h4{
+        font-size: 16px;
+    }
+
+    .kontainer .features .card p{
+        font-size: 15px;
+    }
+
+    footer .top ul{
+        gap: 15px;    
+    }
+
+}
+
+@media screen and (max-width: 992px) {
+    nav button{
+        display: none;
+    }
+
+    nav ul{
+        gap: 20px
+    }
+
+    nav ul li a{
+        font-size: 15px;
+    }
+
+    header .container{
+        flex-direction: column;
+    }
+
+    .skills .skill-items{
+        gap: 25px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .about{
+        flex-direction: column;
+        justify-content: center;
+    } 
+    
+    .portfolio .portfo-items{
+        gap: 25px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .portfolio .portfo-items .item{
+        width: 85%;
+    }
+
+    .kontainer .features{
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .kontainer .features .card{
+        width: 70%;
+    }
+
+    footer .top ul{
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    nav{
+        justify-content: space-between;
+        padding: 0 42px;
+    }
+
+    nav ul.nav-links{
+        display: none;
+    }
+
+    nav.open .nav-logo{
+        display: none;
+    }
+
+    nav.open ul.nav-links{
+        display: flex;
+    }
+
+    nav button#menuButton{
+        display: flex;
+    }
+
+    .container{
+        padding: 42px;
+    }
+
+    .skills{
+        padding: 85px 42px 0;
+    }
+
+    .skills .skill-items{
+        gap: 8px;
+    }
+
+    .about{
+        padding: 85px 42px;
+    }
+
+    .portfolio{
+        padding: 60px 42px;
+    }
+
+    .portfolio .portfo-items{
+        gap: 18px;
+    }
+
+    .kontainer{
+        padding: 85px 42px;
+    }
+
+    footer{
+        padding: 85px 42px;
+    }
+
+    footer .bottom{
+        flex-direction: column-reverse;
+        gap: 14px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    
+    nav ul li a{
+        font-size: 11px;
+    }
+    
+    nav .nav-logo a{
+        font-size: 18px;
+    }
+
+    .container .left h3{
+        font-size: 32px;
+    }
+
+    .container .left p{
+        font-size: 16px;
+    }
+
+    .container .left button{
+        width: 100%;
+    }
+
+    .skills .skill-items .item{
+        width: 100%;
+    }
+
+    .portfolio .header button{
+        font-size: 12px;
+        padding: 8px 14px;
+    }
+
+    .portfolio .portfo-items .item{
+        width: 80%;
+    }
+
+    .feedback .customers .item{
+        width: 100%;
+    }
 }

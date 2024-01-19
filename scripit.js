@@ -73,3 +73,8 @@ particlesJS("particles", {
     },
     retina_detect: true
 });
+
+function openMenu() {
+    const nav = document.querySelector('nav');
+    nav.classList.toggle('open');
+}
