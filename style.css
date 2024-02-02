@@ -163,7 +163,6 @@ header .content h1{
     font-size: 3rem;
     font-weight: 700;
     line-height: 4rem;
-    margin-left: 8vh;
 }
 
 header .content h1 span{
@@ -323,6 +322,11 @@ h5{
     font-size: 20px;
     margin-top: 30px;
     color: #fff;
+}
+
+.botton{
+    text-decoration: none;
+    color: #ebebf3;
 }
 
 .portfolio{
@@ -713,6 +717,14 @@ footer .bottom .links  a{
         padding: 85px 42px;
     }
 
+    .features{
+        padding: 0px;
+    }
+
+    .features .card{
+        width: 5000px;
+    }
+
     footer{
         padding: 85px 42px;
     }
@@ -731,6 +743,14 @@ footer .bottom .links  a{
     
     nav .nav-logo a{
         font-size: 18px;
+    }
+
+    header H1{
+        margin-left: 0vh;
+    }
+
+    .image{
+        display: none;
     }
 
     .container .left h3{
@@ -752,10 +772,25 @@ footer .bottom .links  a{
     .portfolio .header button{
         font-size: 12px;
         padding: 8px 14px;
+        width: 120px;
+        height: 60px;
+        display: none;
+    }
+
+    .portfolio .header a{
+        font-size: 5px;
     }
 
     .portfolio .portfo-items .item{
         width: 80%;
+    }
+
+    .features{
+        padding: 0px;
+    }
+
+    .features .card{
+        width: 5000px;
     }
 
     .feedback .customers .item{
